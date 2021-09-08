@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title> Resources List </title>
+
+</head>
+<body>
+
+<h2>Resources</h2>
+
+    {% if rlist %}
+    <table>
+        <tr><th>Name</th><th>Link</th><th>Description</th></tr>
+    {% for resource  in rlist %}
+            <tr><td>{{ resource.name }}</td><td><a href="{{ resource.url }}">{{ resource.url }}</a></td><td>{{ resource.resource_description }}</td></tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No resources are available.</p>
+{% endif %}
+
+<a href="../resources/new" class="button">Create New Resource</a>
+</body>
+</html>
