@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'journal/app.css' %}">
+    <title>Title</title>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<html>
+    <body>
+
+
+
+<div class="main">
+    <!-- Display attributes of instance -->
+
+    {{ data.name }} <br/>
+    <a href="{{ data.url }}">{{ data.url }}</a> <br/>
+    {{ data.description }}
+
+
+</div>
+
+
+<a href="../" class="button">List</a>
+<a href = "delete" class="button"> {{'delete'}} </a>
+<a href = "update" class="button"> {{'update'}} </a>
+
+   </body>
+ </html>

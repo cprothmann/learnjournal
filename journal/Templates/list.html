@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <title> Resources List </title>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'journal/app.css' %}">
+    <title> Resources List </title>
 
 </head>
+
+<header>
+<div class="header">
+
+  <h1>Journal Appp </h1>
+  <a href="../resources/new" class="button">Create New Resource</a>
+</div>
+
+</header>
+
 <body>
+<div class="container">
+  <h2>Resource List </h2>
+     {% if rlist %}
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1"> Resource Name </div>
+      <div class="col col-2">Resource URL</div>
+      <div class="col col-3">Resource Description</div>
+      <div class="col col-4">View Resource</div>
+      <div class="col col-5">Update Resource</div>
+        <div class="col col-6">Delete Resource</div>
+    </li>
+        {% for resource  in rlist %}
+    <li class="table-row">
+      <div class="col col-1" data-label="name"> {{resource.name}} </a></div>
+      <div class="col col-2" data-label= "link"> <a href="{{ resource.url }}">{{ resource.url }}</a></div>
+      <div class="col col-3" data-label="describe">{{ resource.resource_description }}</div>
+      <div class="col col-4" data-label="View"><a href = "{{resource.id}}"> {{'View'}} </a></div>
+      <div class="col col-5" data-label="Update"><a href = "{{resource.id}}/update" > {{'update'}} </a></div>
+         <div class="col col-6" data-label="Delete"><a href = "{{resource.id}}/delete" > {{'delete'}} </a></div>
+    </li>
+      {% endfor %}
+  </ul>
 
-<h2>Resources</h2>
-
-    {% if rlist %}
-    <table>
-        <tr><th>Name</th><th>Link</th><th>Description</th></tr>
-    {% for resource  in rlist %}
-            <tr><td>{{ resource.name }}</td><td><a href="{{ resource.url }}">{{ resource.url }}</a></td><td>{{ resource.resource_description }}</td></tr>
-    {% endfor %}
-    </table>
-{% else %}
+    {% else %}
     <p>No resources are available.</p>
 {% endif %}
-
-<a href="../resources/new" class="button">Create New Resource</a>
+</div>
 </body>
 </html>
