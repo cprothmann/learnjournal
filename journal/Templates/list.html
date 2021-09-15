@@ -1,24 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html>
+
 <head>
     {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'journal/app.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
     <title> Resources List </title>
 
 </head>
 
-<header>
-<div class="header">
-
-  <h1>Journal Appp </h1>
+<body>
+<center>
+<br>
+<div class="centrecontainer">
   <a href="../resources/new" class="button">Create New Resource</a>
+   <a href='../' class="button">Home Page</a>
 </div>
 
-</header>
-
-<body>
 <div class="container">
-  <h2>Resource List </h2>
+  <h2>Resource List
+
+    </h2>
+</div>
      {% if rlist %}
   <ul class="responsive-table">
     <li class="table-header">
@@ -31,12 +37,12 @@
     </li>
         {% for resource  in rlist %}
     <li class="table-row">
-      <div class="col col-1" data-label="name"> {{resource.name}} </a></div>
-      <div class="col col-2" data-label= "link"> <a href="{{ resource.url }}">{{ resource.url }}</a></div>
+      <div class="col col-1" data-label="name"> <a style="color: #3d4042;"> {{resource.name}} </a></div>
+      <div class="col col-2" data-label= "link"> <a style="color: #1405b5;" href="{{ resource.url }}">{{ resource.url }}</a></div>
       <div class="col col-3" data-label="describe">{{ resource.resource_description }}</div>
-      <div class="col col-4" data-label="View"><a href = "{{resource.id}}"> {{'View'}} </a></div>
-      <div class="col col-5" data-label="Update"><a href = "{{resource.id}}/update" > {{'update'}} </a></div>
-         <div class="col col-6" data-label="Delete"><a href = "{{resource.id}}/delete" > {{'delete'}} </a></div>
+      <div class="col col-4" data-label="View"><a style="color: #1405b5;" href = "{{resource.id}}"> {{'View'}} </a></div>
+      <div class="col col-5" data-label="Update"><a style="color: #1405b5;" href = "{{resource.id}}/update" > {{'Update'}} </a></div>
+      <div class="col col-6" data-label="Delete"><a style="color: #1405b5;" href = "{{resource.id}}/delete" > {{'Delete'}} </a></div>
     </li>
       {% endfor %}
   </ul>
@@ -44,6 +50,8 @@
     {% else %}
     <p>No resources are available.</p>
 {% endif %}
-</div>
+</center>
 </body>
 </html>
+
+{% endblock content %}

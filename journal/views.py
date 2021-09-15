@@ -15,7 +15,7 @@ def home_view(request):
 
 def index(request):
     rlist = Resourcelist.objects.all()
-    template =loader.get_template('home.html')
+    template =loader.get_template('welcome.html')
     #resource_list = ",".join([r.name for r in Resources_list])
 
     context = {

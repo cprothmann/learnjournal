@@ -1,33 +1,3 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-  {% load static %}
-	  {% load bootstrap4 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-<link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
-	<script type = "text/javascript" src="{% static 'journal/js/clock.js' %}"></script>
-	<script type = "text/javascript" src="{% static 'journal/js/weather.js' %}"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
-</head>
-
-<body>
-
-	<br>
-
-	<br>
-	<div class="centrecontainer"> <a href="../journal/resources" class="button"> Resource List </a></div>
-
-
-
-   <script type="text/javascript">
 
 $(function(){
 
@@ -128,40 +98,11 @@ $(function(){
 
     })();
 
+    // Switch the theme
 
+    $('a.button').click(function(){
+        clock.toggleClass('light dark');
+    });
 
 });
-
-    </script>
-
-<div id="clock" class="light">
-			<div class="display">
-				<div class="weekdays"></div>
-				<div class="ampm"></div>
-				<div class="alarm"></div>
-				<div class="digits"></div>
-			</div>
-		</div>
-
-<!-- JavaScript Includes -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
-
-<script type="text/javascript">
-
-</script>
-
-<a class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/london/" data-label_1="LONDON" data-label_2="WEATHER" >LONDON WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
-
-
-
-<div class="content">
-
-</body>
-</html>
-
-{% endblock content %}
 

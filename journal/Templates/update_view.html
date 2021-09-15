@@ -1,16 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'journal/app.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
     <title>Update Resource</title>
 </head>
 
 <body>
 
 <h2>Update Resource</h2>
-
+</br>
+<a href="../" class="button">Return to Resource List</a>
+</br>
 <div class="main">
     <!-- Create a Form -->
     <form method="POST">
@@ -27,3 +33,5 @@
 
 </body>
 </html>
+
+{% endblock content %}

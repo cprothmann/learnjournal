@@ -1,19 +1,22 @@
+{% extends 'base.html' %}
 
+
+{% block content %}
 
 <!DOCTYPE html>
 <html>
 <head>
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'journal/app.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
  <title>Homepage</title>
 
 </head>
 <body>
 
 <h2>Journal App</h2>
-
-
 <a href="resources/" class="button">Resource List</a>
 <a href="resources/new" class="button">Create New</a>
 </body>
 </html>
+
+{% endblock content %}

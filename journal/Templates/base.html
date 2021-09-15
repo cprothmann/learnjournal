@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 
-<header> .b-example-divider {
-  height: 3rem;
-  background-color: rgba(0, 0, 0, .1);
-  border: solid rgba(0, 0, 0, .15);
-  border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-}</header>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
+</head>
 
 <body>
 
-</body>
-</html>
+<section>
 
-{%block content}
-{%end block}
+  <h1> Journal App </h1>
+</section>
+
+<header>
+
+</header>
+
+    {% block content %}{% endblock content %}
+
