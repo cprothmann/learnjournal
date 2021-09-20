@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
+    <title>Update Resource</title>
+</head>
+
+<body>
+
+<h2>Update Resource</h2>
+</br>
+<a href="../" class="button">Return to Resource List</a>
+</br>
+<div class="main">
+    <!-- Create a Form -->
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+
+        <!-- form as paragraph -->
+        {{ form.as_p }}
+
+        <input type="submit" value="Update">
+    </form>
+
+</div>
+
+</body>
+</html>
+
+{% endblock content %}

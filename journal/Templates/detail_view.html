@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
+    <title>Resource</title>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<html>
+    <body>
+
+    <center>
+
+<br>
+
+<div class="main">
+    <!-- Display attributes of instance -->
+    <p> {{ data.name }} </p>
+
+    <a style="color: #1405b5;" href="{{ data.url }}">{{ data.url }}</a>
+    <br/>
+   <p>{{ data.resource_description }}</p>
+    <br/>
+
+
+</div>
+
+<a href="../" class="button">Resource List</a>
+<a href = "delete" class="button"> {{'Delete'}} </a>
+<a href = "update" class="button"> {{'Update'}} </a>
+</center>
+   </body>
+ </html>
+
+{% endblock content %}

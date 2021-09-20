@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<center>
+<div class="group">
+
+  <h2>Resource Information</h2>
+
+  <form method ="POST">
+
+	      {% csrf_token %}
+{{ form.as_p}}
+
+<input type="submit" value="save">
+
+  </form>
+
+    </br>
+    <a href="../" class="button">Return to Resource List</a>
+
+</div>
+</center>
+{% endblock content %}
+
+

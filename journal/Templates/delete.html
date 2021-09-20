@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'journal/css/app.css' %}">
+    <title>Delete</title>
+</head>
+
+
+<body>
+<center>
+    </br>
+
+<form method="post">{% csrf_token %}
+    <p>Confirm delete: {{ object.name }}?</p>
+    <input type="Submit" value="Confirm">
+<br>
+   <a href = "../" class = "button"> {{'Back to Resource View'}} </a>
+
+</form>
+</center>
+</body>
+</html>
+
+{% endblock content %}
